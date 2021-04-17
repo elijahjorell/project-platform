@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const Post = (props) => {
+const Post = ({ post }) => {
   return (
     <div className="Post">
-      <Link to={"/" + props.authorUsername}>Go to author profile</Link>
+      <Link to={"/" + post.author.username}>Go to author profile</Link>
       <br />
-      <Link to={"/" + props.authorUsername + "/project/" + props.projectId}>Go to project {props.projectId}</Link>
+      <Link to={"/" + post.project.title + "/project/" + post.project.id}>Go to project</Link>
     </div>
   );
 };

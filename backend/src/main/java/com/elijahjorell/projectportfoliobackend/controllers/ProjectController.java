@@ -25,10 +25,10 @@ public class ProjectController {
 
     @GetMapping("/{username}/projects")
     @ResponseBody
-    public List<Project> getPosts(@PathVariable String username) {
-        LOGGER.info("Fetching projects of user with username=" + username);
+    public List<Project> findByUsername(@PathVariable String username) {
+        LOGGER.info("Fetching projects of user with username='" + username + "'");
         List<Project> foundProjects = projectService.findByAuthorUsername(username);
-        LOGGER.info("Found " + foundProjects.size() + " projects");
+        LOGGER.info("Serving " + foundProjects.size() + " project(s)");
         return foundProjects;
     }
 

@@ -17,9 +17,10 @@ public class Post {
         super();
     }
 
-    public Post(User author, Project project) {
+    public Post(User author, Project project, String content) {
         this.author = author;
         this.project = project;
+        this.content = content;
     }
 
     public int getId() {
@@ -46,12 +47,21 @@ public class Post {
         this.project = project;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
                 "id=" + id +
                 ", author=" + author +
                 ", project=" + project +
+                ", content='" + content + '\'' +
                 '}';
     }
 
