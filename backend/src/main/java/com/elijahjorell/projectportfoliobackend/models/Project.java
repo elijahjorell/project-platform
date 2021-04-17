@@ -10,15 +10,18 @@ public class Project {
 
     @Id @GeneratedValue private int id;
     @ManyToOne private User author;
+    private String title;
+    private String goal;
     @OneToMany(mappedBy = "project") @JsonIgnore private List<Post> posts;
 
     public Project() {
         super();
     }
 
-    public Project(int id, User author) {
-        this.id = id;
+    public Project(User author, String title, String goal) {
         this.author = author;
+        this.title = title;
+        this.goal = goal;
     }
 
     public int getId() {
@@ -35,6 +38,22 @@ public class Project {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getGoal() {
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
     }
 
     @Override

@@ -11,9 +11,15 @@ public class Post {
     @Id @GeneratedValue private int id;
     @ManyToOne private User author;
     @ManyToOne private Project project;
+    private String content;
 
     public Post() {
         super();
+    }
+
+    public Post(User author, Project project) {
+        this.author = author;
+        this.project = project;
     }
 
     public int getId() {
